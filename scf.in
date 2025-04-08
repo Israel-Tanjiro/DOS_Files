@@ -1,0 +1,35 @@
+&control
+    calculation = 'scf',
+    prefix = 'Ta',
+    outdir = './out',
+    pseudo_dir = '/Users/israelhernandez/Documents/DOS_TT/Optimized_phon',
+    tstress = .true.,
+    tprnfor = .true.,
+    verbosity = 'high'
+/
+
+&system
+    ibrav = 1,
+    celldm(1) = 6.1395,
+    nat = 1,
+    ntyp = 1,
+    ecutwfc = 60,
+    ecutrho = 600,
+    occupations = 'smearing',
+    smearing = 'mp',
+    degauss = 0.02
+/
+
+&electrons
+    conv_thr = 1.0d-10,
+    mixing_beta = 0.7
+/
+
+ATOMIC_SPECIES
+Ta 180.94788 Ta.pbesol-spfn-rrkjus_psl.1.0.0.UPF
+
+ATOMIC_POSITIONS (alat)
+Ta 0.0 0.0 0.0
+
+K_POINTS automatic
+12 12 12 0 0 0
